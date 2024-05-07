@@ -1,0 +1,47 @@
+PUT himanshu-mathur
+PUT favorite_candy
+POST favorite_candy/_doc
+{
+  "first_name": "Lisa",
+  "candy" : "Sour skittles"
+}
+POST favorite_candy/_doc/1
+{
+  "first_name": "kitkat",
+  "candy" : "tasty"
+}
+POST favorite_candy/_doc/2
+{
+  "first_name": "rachel",
+  "candy" : "mangobite"
+}
+POST favorite_candy/_doc/3
+{
+  "first_name": "tom",
+  "candy" : "kitkat"
+}
+
+POST favorite_candy/_create/1
+{
+  "first_name": "tom",
+  "candy" : "kitkat"
+}
+# will give an error: alredy exists
+
+# update:
+# doc only update the field mentioned
+POST favorite_candy/_update/1
+{
+  "doc": {
+    "candy" : "mangobite"
+  }
+}
+
+
+GET favorite_candy/_doc/1
+GET favorite_candy/_doc/2
+GET favorite_candy/_doc/3
+
+DELETE favorite_candy/_doc/3
+
+
